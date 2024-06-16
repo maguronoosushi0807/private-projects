@@ -565,7 +565,7 @@
 565
 566
 567
-568 {literature=(名)文学|(名)文献|}{literary=(形)文学[文芸]の&literary works=(名)文学[文芸]作品&literal=(形)文字通りの&literate=(形)読み書きのできる&}{The Tale of Genji i one of the greatest works of Japanese (literature).=「源氏物語」は日本文学で最も偉大な作品のうちの1つだ。}
+568 {literature=(名)文学|(名)文献|}{literary=(形)文学[文芸]の&literary works=(名)文学[文芸]作品&literal=(形)文字通りの&literate=(形)読み書きのできる&}{The Tale of Genji i one of the greatest works of Japanese (  ).-literature=「源氏物語」は日本__文学__で最も偉大な作品のうちの1つだ。&}
 569
 570
 571

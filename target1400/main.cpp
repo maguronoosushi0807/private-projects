@@ -41,9 +41,9 @@ int main() {
 		while (num <= 1400) {
 			// 単語番号の決定
 			cout << "単語番号:" << num << endl;
-			cout << "見出し語_英(to+単語番号でスキップ):";
+			cout << "見出し語_英{(to)(単語番号|見出し語_英)}\t:";
 			cin >> input;
-			if (input == "exit") break;
+			if (input == "__exit") break;
 			if (input.find("to") != string::npos) {
 				num = stoi(input.substr(2, input.size()));
 				cout << "単語番号:" << num << " 見出し語_英:";
@@ -52,11 +52,40 @@ int main() {
 			Word word{};
 			word.num = num;
 			word.headword_e = input;
-			cout << "見出し語_日:";
-			while (input[0] != 'e') {
+			while (input[0] != '_') {
+				cout << "見出し語_日{(_)見出し語}\t\t:";
 				cin >> input;
-				word.headword_j;
+				string buf = input;
+				if (buf[0] == '_')buf.erase(0, 1);
+				word.headword_j.push_back(buf);
 			}
+
+			// 派生語
+			string en{ "err" }, jp{};
+			while (en[0] != '_') {
+				cout << "派生語{(_)en}\t\t\t\t:";
+				cin >> en;
+				cout << "派生語{jp}\t\t\t\t:";
+				cin >> jp;
+				string buf = en;
+				if (buf[0] == '_')buf.erase(0, 1);
+				word.derivative_e.push_back(buf);
+				word.derivative_j.push_back(jp);
+			}
+
+			// 例文
+			en = "err";
+			while (en[0] != '_') {
+				cout << "例文{(_)en}\t\t\t\t:";
+				cin >> en;
+				cout << "例文(jp)\t\t\t\t:";
+				cin >> jp;
+				string buf = en;
+				if (buf[0] == '_')buf.erase(0, 1);
+				word.example_e.push_back(buf);
+				word.example_j.push_back(jp);
+			}
+
 			cout << endl;
 			word.print();
 			cout << endl;
@@ -94,7 +123,7 @@ int main() {
 			cout << "\033[7m";
 			getline(cin, input);
 			cout << "\033[m";
-			if (input == "exit") return 0;
+			if (input == "__exit") return 0;
 			else if (input != problem.collect)cout << "\033[31m 不正解 \033[m" << endl;
 			else {
 				cout << "\033[36m正解\033[m" << endl;
@@ -102,7 +131,7 @@ int main() {
 			}
 			j++;
 		}
-		if (j == 3)cout << "正答:" << problem.collect << endl;
+		if (j == 3 && !collected)cout << "正答:" << problem.collect << endl;
 
 	}
 

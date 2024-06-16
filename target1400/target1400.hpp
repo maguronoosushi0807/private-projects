@@ -17,6 +17,7 @@ struct Word
 	vector<string>derivative_j{};
 
 	vector<string>example_e{};
+	vector<string>example_ans{};
 	vector<string>example_j{};
 
 	Word() {};
@@ -43,8 +44,9 @@ struct Word
 		}
 
 		cout << "—á•¶:" << endl;
-		for (auto& s : example_e)cout << s << endl;
-		for (auto& s : example_j)cout << s << endl;
+		for (int i = 0; i < example_e.size(); i++) {
+			cout << example_e[i] << endl << example_ans[i] << endl << example_j[i] << endl;
+		}
 	};
 };
 
@@ -106,12 +108,22 @@ int loadWords(vector<Word>& word_list) {
 		// —á•¶
 		line.erase(0, line.find("{") + 1);
 		while (line.find("&") < line.find("}")) {
-			index = line.find("=");
-			word.example_e.push_back(line.substr(0, index));
+			string buf;
+			index = line.find("-");
+			//word.example_e.push_back(line.substr(0, index));
+			buf = "\t" + line.substr(0, index) + "\n";
 			line.erase(0, index + 1);
+
+			index = line.find("=");
+			word.example_ans.push_back(line.substr(0, index));
+			line.erase(0, index + 1);
+
 			index = line.find("&");
 			word.example_j.push_back(line.substr(0, index));
+			buf += "\t\t" + line.substr(0, index) + "\n";
 			line.erase(0, index + 1);
+
+			word.example_e.push_back(buf);
 		}
 
 		word.print();
@@ -140,10 +152,11 @@ void makeProblems(vector<Problem>& problem_list, vector<Word>& word_list, int be
 			problem.collect = word_list[i].derivative_e[j];
 			problem_list.push_back(problem);
 		}
+
 		// —á•¶
-		for (int j = 0; j < word_list[i].example_j.size(); j++) {
-			problem.problem = word_list[i].example_j[j];
-			problem.collect = word_list[i].example_e[j];
+		for (int j = 0; j < word_list[i].example_ans.size(); j++) {
+			problem.problem = word_list[i].example_e[j];
+			problem.collect = word_list[i].example_ans[j];
 			problem_list.push_back(problem);
 		}
 		cout << "word num:" << i + 1 << " added";
