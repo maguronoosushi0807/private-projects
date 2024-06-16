@@ -19,4 +19,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="target1400.hpp">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
