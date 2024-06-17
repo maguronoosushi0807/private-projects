@@ -52,37 +52,39 @@ int main() {
 			Word word{};
 			word.num = num;
 			word.headword_e = input;
-			while (input[0] != '_') {
+			while (input != "_") {
 				cout << "å©èoÇµåÍ_ì˙{(_)å©èoÇµåÍ}\t\t:";
 				cin >> input;
+				if (input == "_") break;
 				string buf = input;
-				if (buf[0] == '_')buf.erase(0, 1);
 				word.headword_j.push_back(buf);
 			}
 
 			// îhê∂åÍ
-			string en{ "err" }, jp{};
-			while (en[0] != '_') {
+			string en{}, jp{};
+			while (en != "_") {
 				cout << "îhê∂åÍ{(_)en}\t\t\t\t:";
 				cin >> en;
+				if (en == "_") break;
+				word.derivative_e.push_back(en);
 				cout << "îhê∂åÍ{jp}\t\t\t\t:";
 				cin >> jp;
-				string buf = en;
-				if (buf[0] == '_')buf.erase(0, 1);
-				word.derivative_e.push_back(buf);
 				word.derivative_j.push_back(jp);
 			}
 
 			// ó·ï∂
-			en = "err";
-			while (en[0] != '_') {
+			string ans{};
+			en = "";
+			while (en != "_") {
 				cout << "ó·ï∂{(_)en}\t\t\t\t:";
 				cin >> en;
+				if (en == "_") break;
+				cout << "ó·ï∂(ans)\t\t\t\t:";
+				cin >> ans;
 				cout << "ó·ï∂(jp)\t\t\t\t:";
 				cin >> jp;
-				string buf = en;
-				if (buf[0] == '_')buf.erase(0, 1);
-				word.example_e.push_back(buf);
+				word.example_e.push_back(en);
+				word.example_ans.push_back(ans);
 				word.example_j.push_back(jp);
 			}
 
@@ -122,6 +124,8 @@ int main() {
 			cout << "íPåÍî‘çÜ:" << i + 1 << "-" << j + 1 << " \033[7m" << problem.problem << "\033[m\tans:";
 			cout << "\033[7m";
 			getline(cin, input);
+			if (input.empty()) getline(cin, input);
+			// cout << "line:" << input << ".";
 			cout << "\033[m";
 			if (input == "__exit") return 0;
 			else if (input != problem.collect)cout << "\033[31m ïsê≥â \033[m" << endl;
