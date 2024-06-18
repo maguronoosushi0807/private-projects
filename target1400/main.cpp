@@ -30,7 +30,7 @@ int main() {
 	//cin >> derivative;
 	cout << "cmd" << endl << "<";
 	cin >> cmd;
-
+	
 	// writing
 	if (cmd == "__write") {
 		string num_str{};
@@ -42,19 +42,24 @@ int main() {
 			// 単語番号の決定
 			cout << "単語番号:" << num << endl;
 			cout << "見出し語_英{(to)(単語番号|見出し語_英)}\t:";
-			cin >> input;
-			if (input == "__exit") break;
-			if (input.find("to") != string::npos) {
+			//cin >> input; __exitで抜けられない
+			getline(cin, input);
+			if (input.empty())getline(cin, input); // この行を消すとちゃんと動かない
+			if (input == "__exit" || input == "__e") break;
+			if (input.find("to") == 0) {
 				num = stoi(input.substr(2, input.size()));
 				cout << "単語番号:" << num << " 見出し語_英:";
-				cin >> input;
+				// cin >> input;
+				getline(cin, input);
+				if (input.empty())getline(cin, input);
 			}
 			Word word{};
 			word.num = num;
 			word.headword_e = input;
 			while (input != "_") {
 				cout << "見出し語_日{(_)見出し語}\t\t:";
-				cin >> input;
+				// cin >> input;
+				getline(cin, input);
 				if (input == "_") break;
 				string buf = input;
 				word.headword_j.push_back(buf);
@@ -64,11 +69,13 @@ int main() {
 			string en{}, jp{};
 			while (en != "_") {
 				cout << "派生語{(_)en}\t\t\t\t:";
-				cin >> en;
+				// cin >> en;
+				getline(cin, en);
 				if (en == "_") break;
 				word.derivative_e.push_back(en);
 				cout << "派生語{jp}\t\t\t\t:";
-				cin >> jp;
+				// cin >> jp;
+				getline(cin, jp);
 				word.derivative_j.push_back(jp);
 			}
 
@@ -77,12 +84,15 @@ int main() {
 			en = "";
 			while (en != "_") {
 				cout << "例文{(_)en}\t\t\t\t:";
-				cin >> en;
+				// cin >> en;
+				getline(cin, en);
 				if (en == "_") break;
 				cout << "例文(ans)\t\t\t\t:";
-				cin >> ans;
+				//cin >> ans;
+				getline(cin, ans);
 				cout << "例文(jp)\t\t\t\t:";
-				cin >> jp;
+				// cin >> jp;
+				getline(cin, jp);
 				word.example_e.push_back(en);
 				word.example_ans.push_back(ans);
 				word.example_j.push_back(jp);
@@ -90,6 +100,15 @@ int main() {
 
 			cout << endl;
 			word.print();
+			cout << endl << endl;
+			string output = to_string(word.num) + " {" + word.headword_e + "=";
+			for (auto& s : word.headword_j)output += s + "|";
+			output += "}{";
+			for (int i = 0; i < word.derivative_e.size(); i++)output += word.derivative_e[i] + "=" + word.derivative_j[i] + "&";
+			output += "}{";
+			for (int i = 0; i < word.example_e.size(); i++)output += word.example_e[i] + "-" + word.example_ans[i] + "=" + word.example_j[i] + "&";
+			output += "}";
+			cout << output;
 			cout << endl;
 			num++;
 		}
@@ -127,7 +146,7 @@ int main() {
 			if (input.empty()) getline(cin, input);
 			// cout << "line:" << input << ".";
 			cout << "\033[m";
-			if (input == "__exit") return 0;
+			if (input == "__exit" || input == "__e") return 0;
 			else if (input != problem.collect)cout << "\033[31m 不正解 \033[m" << endl;
 			else {
 				cout << "\033[36m正解\033[m" << endl;
