@@ -5,6 +5,8 @@
 #include<fstream>
 #include<vector>
 
+constexpr auto FILE_DIR = L"assets/words.txt";
+
 using namespace std;
 
 struct Word
@@ -57,7 +59,7 @@ struct Problem {
 
 int loadWords(vector<Word>& word_list) {
 
-	ifstream word_file(L"assets/words.txt");
+	ifstream word_file(FILE_DIR);
 	if (word_file.fail()) {
 		cout << "リソースファイルの読み込みに失敗した" << endl;
 		return -1;

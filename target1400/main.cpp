@@ -33,6 +33,7 @@ int main() {
 	
 	// writing
 	if (cmd == "__write") {
+		ofstream file_output{FILE_DIR};
 		string num_str{};
 		cout << "’PŒê”Ô†:";
 		cin >> num_str;
@@ -110,6 +111,7 @@ int main() {
 			output += "}";
 			cout << output;
 			cout << endl;
+			file_output << output << endl;
 			num++;
 		}
 	}
