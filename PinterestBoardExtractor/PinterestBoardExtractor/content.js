@@ -75,7 +75,7 @@
             behavior: "smooth"
         });
 
-        await sleep(1500);
+        await sleep(500);
 
         const newHeight = document.body.scrollHeight;
 
