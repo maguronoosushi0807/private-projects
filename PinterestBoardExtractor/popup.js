@@ -1,6 +1,6 @@
 document.getElementById("extractButton").addEventListener("click", async () => {
 
-    // 現在開いているタブ取得
+    // 現在タブ取得
     const [tab] = await chrome.tabs.query({
         active: true,
         currentWindow: true
@@ -12,22 +12,40 @@ document.getElementById("extractButton").addEventListener("click", async () => {
         files: ["content.js"]
     });
 
-    // content.js の戻り値
+    // URL一覧
     const urls = results[0].result;
 
-    // 表示エリア
+    console.log(urls);
+
+    // 表示
     const output = document.getElementById("output");
 
-    output.innerHTML = "";
+    output.innerHTML = `
+        Found ${urls.length} images
+    `;
 
-    urls.forEach(url => {
+    // txt化
+    const text = urls.join("\n");
 
-        const div = document.createElement("div");
+    // Blob生成
+    const blob = new Blob(
+        [text],
+        { type: "text/plain" }
+    );
 
-        div.textContent = url;
+    // Blob URL生成
+    const blobUrl = URL.createObjectURL(blob);
 
-        output.appendChild(div);
+    // ダウンロード
+    const a = document.createElement("a");
 
-    });
+    a.href = blobUrl;
+
+    a.download = "pinterest_urls.txt";
+
+    a.click();
+
+    // メモリ解放
+    URL.revokeObjectURL(blobUrl);
 
 });
