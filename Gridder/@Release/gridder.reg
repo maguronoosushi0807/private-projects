@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\Gridder]
+@="Gridder"
+
+[HKEY_CLASSES_ROOT\*\shell\Gridder\command]
+@="\"C:\\rts87_tools\\gridder.exe\" %V"

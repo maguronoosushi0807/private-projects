@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\private-projects\\Gridder\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{992F3944-E6E4-43FF-8372-8FCAFEDFDE0D}|Gridder.vcxproj|C:\\GitHub\\private-projects\\Gridder\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{992F3944-E6E4-43FF-8372-8FCAFEDFDE0D}|Gridder.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992F3944-E6E4-43FF-8372-8FCAFEDFDE0D}|Gridder.vcxproj|C:\\GitHub\\Converter\\ConsoleTest\\add_context.reg||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{992F3944-E6E4-43FF-8372-8FCAFEDFDE0D}|Gridder.vcxproj|C:\\rts87_tools\\gridder.reg||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "add_context.reg",
+              "DocumentMoniker": "C:\\GitHub\\Converter\\ConsoleTest\\add_context.reg",
+              "RelativeDocumentMoniker": "..\\..\\Converter\\ConsoleTest\\add_context.reg",
+              "ToolTip": "C:\\GitHub\\Converter\\ConsoleTest\\add_context.reg",
+              "RelativeToolTip": "..\\..\\Converter\\ConsoleTest\\add_context.reg",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002531|",
+              "WhenOpened": "2026-05-07T03:51:56.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "gridder.reg",
+              "DocumentMoniker": "C:\\rts87_tools\\gridder.reg",
+              "RelativeDocumentMoniker": "..\\..\\..\\rts87_tools\\gridder.reg",
+              "ToolTip": "C:\\rts87_tools\\gridder.reg",
+              "RelativeToolTip": "..\\..\\..\\rts87_tools\\gridder.reg",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002531|",
+              "WhenOpened": "2026-05-07T03:49:59.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\GitHub\\private-projects\\Gridder\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\GitHub\\private-projects\\Gridder\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAF8AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-07T03:01:27.473Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

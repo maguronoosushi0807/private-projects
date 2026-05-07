@@ -1,0 +1,14 @@
+﻿  main.cpp
+E:\Lib\opencv\build\include\opencv2\calib3d.hpp(678,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+E:\Lib\opencv\build\include\opencv2\imgcodecs.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1395,5): warning MSB8012: TargetPath(C:\GitHub\private-projects\Gridder\x64\Release\.exe) が Linker の OutputFile プロパティ値 (C:\GitHub\private-projects\Gridder\x64\Release\Gridder.exe) と一致しません。このため、プロジェクトが正常にビルドされない可能性があります。この問題を解決するには、$(OutDir)、$(TargetName)、および $(TargetExt) の各プロパティ値が、%(Link.OutputFile) で指定されている値と一致することを確認してください。
+  コード生成しています。
+  6 of 266 functions ( 2.3%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  コード生成が終了しました。
+  Gridder.vcxproj -> C:\GitHub\private-projects\Gridder\x64\Release\.exe

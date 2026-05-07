@@ -1,0 +1,8 @@
+﻿  main.cpp
+E:\Lib\opencv\build\include\opencv2\calib3d.hpp(678,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+E:\Lib\opencv\build\include\opencv2\imgcodecs.hpp(1,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+  Gridder.vcxproj -> C:\GitHub\private-projects\Gridder\x64\Debug\Gridder.exe
